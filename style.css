@@ -1,158 +1,132 @@
-@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;700&display=swap');
 
 :root {
-    /* NOVA PALETA CYBERPUNK */
-    --fundo-base: #0a0a12;
-    --fundo-card: #161625;
-    --roxo-neon: #bc13fe;
-    --ciano-neon: #0ff;
-    --branco: #ffffff;
-    --texto-secundario: #a0a0c0;
-    --borda-neon: rgba(0, 255, 255, 0.3);
+    --cor-de-fundo: #0a0a12;
+    --verde: #161625;
+    --branco: #bc13fe;;
+    --botao-ativo: #0ff;
+    --branco :#ffffff;
+    --botao-inativo: #a0a0c0;
+    --texto-fundo: rgba(0,255, 255, 0.3);
 }
 
 body {
-    background: var(--fundo-base);
+    background-color: var(--cor-de-fundo);
     color: var(--branco);
-    font-family: 'Orbitron', sans-serif;
-    margin: 0;
-    min-height: 100vh;
+    font-family: 'Chakra Petch', sans-serif;
 }
 
-/* CONTEÚDO PRINCIPAL */
+
 .conteudo-principal {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     max-width: 1200px;
-    width: 90%;
-    margin: 40px auto;
+    width: 100%;
+    margin: 0 auto;
 }
 
-/* TÍTULO - Efeito Neon Mais Forte */
 .titulo-principal {
-    text-align: center;
+    text-align: left;
     width: 100%;
-    font-size: 38px;
-    margin-bottom: 40px;
-    text-shadow: 0 0 10px var(--roxo-neon), 0 0 20px var(--roxo-neon);
-    color: var(--branco);
-    text-transform: uppercase;
-    letter-spacing: 2px;
+    font-size: 32px;
 }
 
 .titulo-principal span {
-    color: var(--ciano-neon);
-    text-shadow: 0 0 10px var(--ciano-neon), 0 0 20px var(--ciano-neon);
+    color: var(--verde);
 }
 
-/* BOTÕES - Estilo Moderno */
-.botoes {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    width: 100%;
-    margin-bottom: -2px; /* Ajuste para encaixar na área de texto */
-}
 
 .botao {
-    font-family: "Orbitron", sans-serif;
-    background-color: var(--fundo-card);
-    color: var(--texto-secundario);
+    font-family: 'Chakra Petch', sans-serif;
+    background-color: var(--botao-inativo);
+    color: var(--branco);
     display: flex;
     justify-content: center;
+    padding: 1em;
+    font-size: 18px;
     align-items: center;
     width: 100%;
-    padding: 20px;
-    font-size: 14px;
-    border: 1px solid var(--borda-neon);
-    border-radius: 12px;
-    cursor: pointer;
-    transition: all 0.4s ease;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+    border-bottom: 4px solid var(--botao-ativo);
+    border-left: 2px solid var(--botao-ativo);
+    border-right: 2px solid var(--botao-ativo);
+    border-top: none;
 }
 
-/* HOVER E ATIVO */
-.botao:hover {
-    transform: translateY(-3px);
-    border-color: var(--ciano-neon);
-    color: var(--branco);
-    box-shadow: 0 0 15px rgba(0, 255, 255, 0.4);
+.botao:first-child {
+    border-radius: 40px 40px 0 0;
+}
+
+.botoes {
+    display: block;
 }
 
 .botao.ativo {
-    background-color: var(--fundo-card);
-    color: var(--ciano-neon);
-    border-color: var(--ciano-neon);
-    box-shadow: 0 0 20px rgba(0, 255, 255, 0.3), inset 0 0 10px rgba(0, 255, 255, 0.2);
-    font-weight: 700;
+    background-color: var(--botao-ativo);
+    border-bottom: 4px solid var(--verde);
 }
 
-/* ÁREA DOS TEXTOS */
 .abas-textos {
-    background-color: var(--fundo-card);
+    background-color: var(--texto-fundo);
     padding: 40px;
-    border-radius: 12px;
-    border: 1px solid var(--borda-neon);
-    box-shadow: 0 0 25px rgba(188, 19, 254, 0.15); /* Sombra roxa suave */
-    width: 100%;
-    box-sizing: border-box;
-}
-
-/* ABAS */
-.aba-conteudo {
-    display: none;
-    opacity: 0;
-    transition: opacity 0.5s ease;
+    border-radius: 0 0 40px 40px;
 }
 
 .aba-conteudo.ativo {
     display: block;
-    opacity: 1;
 }
 
-/* TÍTULOS INTERNOS */
+.aba-conteudo {
+    display: none;
+}
+
 .aba-conteudo-titulo-principal {
     font-size: 28px;
     text-align: center;
-    margin-bottom: 20px;
-    color: var(--branco);
-    text-shadow: 0 0 10px var(--roxo-neon);
 }
 
 .aba-conteudo-titulo-secundario {
     text-align: center;
-    color: var(--ciano-neon);
+    color: var(--verde);
     text-transform: uppercase;
-    font-size: 14px;
-    letter-spacing: 3px;
-    margin-bottom: 15px;
 }
 
-/* RESPONSIVO */
-@media screen and (min-width: 768px){
-    .botoes{
-        flex-direction: row;
-        gap: 10px;
+.contador {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.contador-digito {
+    padding: 0 16px;
+    text-align: center;
+    min-width: 100px;
+}
+
+.contador-digito-numero {
+    font-size: 80px;
+    margin: 0;
+
+}
+
+.contador-digito-texto {
+    color: var(--verde);
+    font-size: 20px;
+    margin: 0;
+
+}
+
+@media screen and (min-width: 768px) {
+    .botoes {
+        display: flex;
     }
-    
-    .botao {
-        border-radius: 12px 12px 0 0;
-        border-bottom: none;
+
+    .botao:first-child {
+        border-radius: 40px 0 0 0;
     }
-    
-    /* Ajuste para a borda inferior do botão ativo sumir */
-    .botao.ativo {
-        border-bottom: 1px solid var(--fundo-card);
-        position: relative;
-        z-index: 2;
-    }
-    
-    .abas-textos {
-        border-radius: 0 12px 12px 12px;
-        margin-top: -1px;
+
+    .botao:last-child {
+        border-radius: 0 40px 0 0;
     }
 }
